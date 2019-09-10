@@ -1,0 +1,1 @@
+curl -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhdHVsIiwiZXhwIjoxNTY4NTMzODA1LCJpYXQiOjE1NjgxMDE4MDV9.irrJ1za0Bmu7qvAOJZ8hcWYjqggJXZjeK3xq9zr5qi23YqbsD68MWQSZXT6JEO1Ckws69gAr0Tt7Skyj7yvknw" https://bank-searches.herokuapp.com/bank/ABHY0065001
