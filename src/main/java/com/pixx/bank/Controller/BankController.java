@@ -5,23 +5,20 @@ import com.pixx.bank.Model.Branches;
 import com.pixx.bank.Repo.Bank_branchesRepo;
 import com.pixx.bank.Repo.BranchesRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-
 
 @RestController
 public class BankController {
 
-    @Autowired
-    BranchesRepo branchesRepo;
+    @Autowired BranchesRepo branchesRepo;
 
-    @Autowired
-    Bank_branchesRepo bank_branchesRepo;
+    @Autowired  Bank_branchesRepo bank_branchesRepo;
 
-    @GetMapping("")
+    @GetMapping("/")
     public String welcomePage(){
         return "Welcome to Bank Search Application" + "<br>" +
 
@@ -36,15 +33,16 @@ public class BankController {
                 "4. Get bank details with bank name and city name with offset and limit: /bank/'bankname'/'city'?offset = '' & limit = '' ";
     }
 
-    @GetMapping(value = "/bank/{ifsc}")
+    @GetMapping("/banks")
     @ResponseBody
-    public List<Branches> findByIfsc(@PathVariable("ifsc") String ifsc){
+    public List<Branches> findByIfsc(@RequestParam("ifsc") String ifsc){
         return this.branchesRepo.findByIfsc(ifsc);
     }
 
-    @GetMapping(value = "/bank/{bank_name}/{city}",params = {"limit", "offset"})
+    @GetMapping("/bank")
     @ResponseBody
-    public List<Bank_BranchesView>findByBankNameAndCity(@PathVariable(name = "bank_name") String bank_name, @PathVariable(name = "city") String city, int limit, int offset){
+    public List<Bank_BranchesView> findByBankNameAndCity(@RequestParam(name = "bank_name") String bank_name, @RequestParam(name = "city") String city,
+                                                         @RequestParam("offset") int offset, @RequestParam("limit") int limit){
         Pageable pageable = PageRequest.of(offset,limit);
         return this.bank_branchesRepo.findByBankNameAndCity(bank_name,city,pageable);
 

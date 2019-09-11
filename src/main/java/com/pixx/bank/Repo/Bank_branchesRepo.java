@@ -13,6 +13,5 @@ import java.util.Optional;
 
 public interface Bank_branchesRepo extends PagingAndSortingRepository<Bank_BranchesView, String> {
 
-    //@Query("Select * From bank_branches Where bank_name='?' And city='?' ")
-    List<Bank_BranchesView> findByBankNameAndCity(String bank_name, String city, Pageable p);
+    List<Bank_BranchesView> findByBankNameAndCity(String bank_name, String city, Pageable pageable);
 }

@@ -3,9 +3,11 @@ package com.pixx.bank.Security.Jwt;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
+
 
 import java.io.Serializable;
 import java.util.Date;
@@ -20,7 +22,7 @@ public class JwtTokenUtil implements Serializable {
 	
 	public static final long JWT_TOKEN_VALIDITY = 432000000;
 
-	@Value("${jwt.secret}")
+	@Value("${jwt.secret:jwtsecret}")
 	private String secret;
 
 	public String getUsernameFromToken(String token) {
