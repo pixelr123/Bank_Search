@@ -1,1 +1,1 @@
-curl -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhdHVsIiwiZXhwIjoxNTY5NzM1NzIzLCJpYXQiOjE1NjkzMDM3MjN9.QOcxStQN6W5vcp3e7L6nlHRvuNFdDJ2dRjxmskzlCTvgTHDQqZY0gUajyw1OP0MzpWxtEwekBNx7ftiNgid4cA" "https://bank-searches.herokuapp.com/banks?ifsc=ABHY0065001"
+curl -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhdHVsIiwiZXhwIjoxNTczMjk3NjA4LCJpYXQiOjE1NzI4NjU2MDh9.pdOTMuiAfvt2aoHopsIwA65QSvzW0lmUXC3Qf0PWRjibeshSHOa8w7JpgkcE3xmFYMyWP1fdhCabEmy4Y4_Qtg" "https://bank-searches.herokuapp.com/banks?ifsc=ABHY0065001"
